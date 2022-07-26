@@ -15,6 +15,12 @@ if (app.get('env') === 'development') {
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
+// test middleware
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  next();
+});
+
 app.use('/api/v1/goals', goalRouter);
 
 app.all('*', (req, res, next) =>
