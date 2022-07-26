@@ -27,6 +27,6 @@ goalSchema.pre('save', async function (next) {
   }
 });
 
-const Goal = mongoose.models.Goals || mongoose.model('Goal', goalSchema);
+const Goal = mongoose.models.Goal || mongoose.model('Goal', goalSchema);
 
 module.exports = Goal;
