@@ -11,6 +11,11 @@ const goalSchema = new mongoose.Schema(
       minlength: [10, 'A goal text must have equal or more than 10 characters'],
     },
     slug: String,
+    user: {
+      type: mongoose.Types.ObjectId,
+      ref: 'User',
+      required: [true, 'A goal must belong to a user'],
+    },
   },
   {
     timestamps: true,
