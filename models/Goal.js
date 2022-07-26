@@ -6,7 +6,9 @@ const goalSchema = new mongoose.Schema(
     text: {
       type: String,
       trim: true,
-      required: [true, 'Please provide some text'],
+      required: [true, 'Please provide a text value'],
+      maxlength: [30, 'A goal text must have less or equal than 30 characters'],
+      minlength: [10, 'A goal text must have equal or more than 10 characters'],
     },
     slug: String,
   },
