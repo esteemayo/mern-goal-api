@@ -1,6 +1,8 @@
 const dotenv = require('dotenv');
 require('colors');
 
+const connectDB = require('./config/db');
+
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION! 🔥 Shutting down...');
   console.log(err.name, err.message);
@@ -9,6 +11,8 @@ process.on('uncaughtException', (err) => {
 
 dotenv.config({ path: './config.env' });
 const app = require('./app');
+
+connectDB();
 
 app.set('port', process.env.PORT || 7777);
 
