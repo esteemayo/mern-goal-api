@@ -1,3 +1,4 @@
+/* eslint-disable */
 const { StatusCodes } = require('http-status-codes');
 const asyncHandler = require('express-async-handler');
 
@@ -7,7 +8,7 @@ const NotFoundError = require('../errors/notFound');
 const ForbiddenError = require('../errors/forbidden');
 
 exports.getAllGoals = asyncHandler(async (req, res, next) => {
-  const features = new APIFeatures(Goal.find(), req.query)
+  const features = new APIFeatures(Goal.find({ user: req.user.id }), req.query)
     .filter()
     .sort()
     .limitFields()
@@ -32,6 +33,12 @@ exports.getGoalById = asyncHandler(async (req, res, next) => {
     return next(new NotFoundError(`No goal found with that ID → ${goalId}`));
   }
 
+  if (String(goal.user._id) !== req.user.id) {
+    return next(
+      new ForbiddenError('You are not permitted to perform this action')
+    );
+  }
+
   res.status(StatusCodes.OK).json({
     status: 'success',
     goal,
@@ -47,6 +54,12 @@ exports.getAllGoalBySlug = asyncHandler(async (req, res, next) => {
     return next(new NotFoundError(`No goal found with that ID → ${slug}`));
   }
 
+  if (String(goal.user._id) !== req.user.id) {
+    return next(
+      new ForbiddenError('You are not permitted to perform this action')
+    );
+  }
+
   res.status(StatusCodes.OK).json({
     status: 'success',
     goal,
@@ -54,6 +67,8 @@ exports.getAllGoalBySlug = asyncHandler(async (req, res, next) => {
 });
 
 exports.createGoal = asyncHandler(async (req, res, next) => {
+  if (!req.body.user) req.body.user = req.user.id;
+
   const goal = await Goal.create({ ...req.body });
 
   res.status(StatusCodes.CREATED).json({
@@ -69,6 +84,12 @@ exports.updateGoal = asyncHandler(async (req, res, next) => {
 
   if (!goal) {
     return next(new NotFoundError(`No goal found with that ID → ${goalId}`));
+  }
+
+  if (String(goal.user._id) !== req.user.id) {
+    return next(
+      new ForbiddenError('You are not permitted to perform this action')
+    );
   }
 
   const updatedGoal = await Goal.findByIdAndUpdate(
@@ -93,6 +114,12 @@ exports.deleteGoal = asyncHandler(async (req, res, next) => {
 
   if (!goal) {
     return next(new NotFoundError(`No goal found with that ID → ${goalId}`));
+  }
+
+  if (String(goal.user._id) !== req.user.id) {
+    return next(
+      new ForbiddenError('You are not permitted to perform this action')
+    );
   }
 
   await goal.remove();
