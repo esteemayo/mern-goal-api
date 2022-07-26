@@ -1,7 +1,11 @@
 const express = require('express');
+
+const protect = require('../middleware/authMiddleware');
 const goalController = require('../controllers/goalController');
 
 const router = express.Router();
+
+router.use(protect);
 
 router
   .route('/')
