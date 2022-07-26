@@ -36,6 +36,15 @@ goalSchema.pre('save', async function (next) {
   }
 });
 
+goalSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'user',
+    select: 'name',
+  });
+
+  next();
+});
+
 const Goal = mongoose.models.Goal || mongoose.model('Goal', goalSchema);
 
 module.exports = Goal;
