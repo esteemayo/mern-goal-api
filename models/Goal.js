@@ -22,6 +22,8 @@ const goalSchema = new mongoose.Schema(
   }
 );
 
+goalSchema.index({ text: 1, slug: 1 });
+
 goalSchema.pre('save', async function (next) {
   if (!this.isModified('text')) return next();
   this.slug = slugify(this.text, { lower: true });
