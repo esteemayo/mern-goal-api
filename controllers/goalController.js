@@ -41,6 +41,18 @@ exports.getAllGoalsByAdmin = asyncHandler(async (req, res, next) => {
   });
 });
 
+exports.searchGoal = asyncHandler(async (req, res, next) => {
+  const { q } = req.query;
+  const text = new RegExp(q, 'i');
+
+  const goals = await Goal.find({ text, user: req.user.id });
+
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    goals,
+  });
+});
+
 exports.getGoalById = asyncHandler(async (req, res, next) => {
   const { id: goalId } = req.params;
 

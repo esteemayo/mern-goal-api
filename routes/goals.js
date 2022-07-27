@@ -14,6 +14,8 @@ router.get(
   goalController.getAllGoalsByAdmin
 );
 
+router.get('/search', goalController.searchGoal);
+
 router.get('/details/:slug', goalController.getAllGoalBySlug);
 
 router
