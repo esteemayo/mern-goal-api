@@ -14,7 +14,7 @@ const sendEmail = async (options) => {
     from: `<Support ${process.env.EMAIL_FROM}>`,
     to: options.email,
     subject: options.subject,
-    message: options.message,
+    text: options.message,
     html: options.html,
   };
 
