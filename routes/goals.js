@@ -1,11 +1,20 @@
 const express = require('express');
 
 const protect = require('../middleware/authMiddleware');
+const authController = require('../controllers/authController');
 const goalController = require('../controllers/goalController');
 
 const router = express.Router();
 
 router.use(protect);
+
+router.get(
+  '/admin',
+  authController.restrictTo('admin'),
+  goalController.getAllGoalsByAdmin
+);
+
+router.get('/details/:slug', goalController.getAllGoalBySlug);
 
 router
   .route('/')
@@ -17,7 +26,5 @@ router
   .get(goalController.getGoalById)
   .patch(goalController.updateGoal)
   .delete(goalController.deleteGoal);
-
-router.get('/details/:slug', goalController.getAllGoalBySlug);
 
 module.exports = router;

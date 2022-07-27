@@ -24,6 +24,23 @@ exports.getAllGoals = asyncHandler(async (req, res, next) => {
   });
 });
 
+exports.getAllGoalsByAdmin = asyncHandler(async (req, res, next) => {
+  const features = new APIFeatures(Goal.find(), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+
+  const goals = await features.query;
+
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    nbHits: goals.length,
+    requestedAt: req.requestTime,
+    goals,
+  });
+});
+
 exports.getGoalById = asyncHandler(async (req, res, next) => {
   const { id: goalId } = req.params;
 
