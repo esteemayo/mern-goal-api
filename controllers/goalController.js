@@ -33,16 +33,16 @@ exports.getGoalById = asyncHandler(async (req, res, next) => {
     return next(new NotFoundError(`No goal found with that ID → ${goalId}`));
   }
 
-  if (String(goal.user._id) !== req.user.id) {
-    return next(
-      new ForbiddenError('You are not permitted to perform this action')
-    );
+  if (String(goal.user._id) === req.user.id || req.user.role === 'admin') {
+    res.status(StatusCodes.OK).json({
+      status: 'success',
+      goal,
+    });
   }
 
-  res.status(StatusCodes.OK).json({
-    status: 'success',
-    goal,
-  });
+  return next(
+    new ForbiddenError('You are not permitted to perform this action')
+  );
 });
 
 exports.getAllGoalBySlug = asyncHandler(async (req, res, next) => {
@@ -51,19 +51,19 @@ exports.getAllGoalBySlug = asyncHandler(async (req, res, next) => {
   const goal = await Goal.findOne({ slug });
 
   if (!goal) {
-    return next(new NotFoundError(`No goal found with that ID → ${slug}`));
+    return next(new NotFoundError(`No goal found with that SLUG → ${slug}`));
   }
 
-  if (String(goal.user._id) !== req.user.id) {
-    return next(
-      new ForbiddenError('You are not permitted to perform this action')
-    );
+  if (String(goal.user._id) === req.user.id || req.user.role === 'admin') {
+    res.status(StatusCodes.OK).json({
+      status: 'success',
+      goal,
+    });
   }
 
-  res.status(StatusCodes.OK).json({
-    status: 'success',
-    goal,
-  });
+  return next(
+    new ForbiddenError('You are not permitted to perform this action')
+  );
 });
 
 exports.createGoal = asyncHandler(async (req, res, next) => {
@@ -86,25 +86,25 @@ exports.updateGoal = asyncHandler(async (req, res, next) => {
     return next(new NotFoundError(`No goal found with that ID → ${goalId}`));
   }
 
-  if (String(goal.user._id) !== req.user.id) {
-    return next(
-      new ForbiddenError('You are not permitted to perform this action')
+  if (String(goal.user._id) === req.user.id || req.user.role === 'admin') {
+    const updatedGoal = await Goal.findByIdAndUpdate(
+      goalId,
+      { $set: { ...req.body } },
+      {
+        new: true,
+        runValidators: true,
+      }
     );
+
+    res.status(StatusCodes.OK).json({
+      status: 'success',
+      goal: updatedGoal,
+    });
   }
 
-  const updatedGoal = await Goal.findByIdAndUpdate(
-    goalId,
-    { $set: { ...req.body } },
-    {
-      new: true,
-      runValidators: true,
-    }
+  return next(
+    new ForbiddenError('You are not permitted to perform this action')
   );
-
-  res.status(StatusCodes.OK).json({
-    status: 'success',
-    goal: updatedGoal,
-  });
 });
 
 exports.deleteGoal = asyncHandler(async (req, res, next) => {
@@ -116,16 +116,16 @@ exports.deleteGoal = asyncHandler(async (req, res, next) => {
     return next(new NotFoundError(`No goal found with that ID → ${goalId}`));
   }
 
-  if (String(goal.user._id) !== req.user.id) {
-    return next(
-      new ForbiddenError('You are not permitted to perform this action')
-    );
+  if (String(goal.user._id) === req.user.id || req.user.role === 'admin') {
+    await goal.remove();
+
+    res.status(StatusCodes.NO_CONTENT).json({
+      status: 'success',
+      goal: null,
+    });
   }
 
-  await goal.remove();
-
-  res.status(StatusCodes.NO_CONTENT).json({
-    status: 'success',
-    goal: null,
-  });
+  return next(
+    new ForbiddenError('You are not permitted to perform this action')
+  );
 });
