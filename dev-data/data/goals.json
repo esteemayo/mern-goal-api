@@ -1,0 +1,149 @@
+[
+  {
+    "_id": "62e46f98f906333eda94b3d3",
+    "text": "Get finances in order",
+    "user": "62e46eddf906333eda94b3cc",
+    "createdAt": "2022-07-29T23:39:04.221Z",
+    "updatedAt": "2022-07-29T23:39:04.221Z"
+  },
+  {
+    "_id": "62e46fa7f906333eda94b3d7",
+    "text": "Get out of debt",
+    "user": "62e46eddf906333eda94b3cc",
+    "createdAt": "2022-07-29T23:39:19.254Z",
+    "updatedAt": "2022-07-29T23:39:19.254Z"
+  },
+  {
+    "_id": "62e46fb5f906333eda94b3db",
+    "text": "Learn something new",
+    "user": "62e46eddf906333eda94b3cc",
+    "createdAt": "2022-07-29T23:39:33.244Z",
+    "updatedAt": "2022-07-29T23:39:33.244Z"
+  },
+  {
+    "_id": "62e46feef906333eda94b3e4",
+    "text": "Get more organized",
+    "user": "62e46e64f906333eda94b3c6",
+    "createdAt": "2022-07-29T23:40:30.103Z",
+    "updatedAt": "2022-07-29T23:40:30.103Z"
+  },
+  {
+    "_id": "62e46ffaf906333eda94b3e8",
+    "text": "Buy a new home",
+    "user": "62e46e64f906333eda94b3c6",
+    "createdAt": "2022-07-29T23:40:42.105Z",
+    "updatedAt": "2022-07-29T23:40:42.105Z"
+  },
+  {
+    "_id": "62e47004f906333eda94b3ec",
+    "text": "Exercise more",
+    "user": "62e46e64f906333eda94b3c6",
+    "createdAt": "2022-07-29T23:40:52.763Z",
+    "updatedAt": "2022-07-29T23:40:52.763Z"
+  },
+  {
+    "_id": "62e4704ef906333eda94b402",
+    "text": "Travel more",
+    "user": "62e46debf906333eda94b3ba",
+    "createdAt": "2022-07-29T23:42:06.747Z",
+    "updatedAt": "2022-07-29T23:42:06.747Z"
+  },
+  {
+    "_id": "62e4705df906333eda94b406",
+    "text": "Spend more time with family",
+    "user": "62e46debf906333eda94b3ba",
+    "createdAt": "2022-07-29T23:42:21.634Z",
+    "updatedAt": "2022-07-29T23:42:21.634Z"
+  },
+  {
+    "_id": "62e4706cf906333eda94b40a",
+    "text": "Do something nice for myself",
+    "user": "62e46debf906333eda94b3ba",
+    "createdAt": "2022-07-29T23:42:36.289Z",
+    "updatedAt": "2022-07-29T23:42:36.289Z"
+  },
+  {
+    "_id": "62e4709ef906333eda94b413",
+    "text": "Learn a new skill",
+    "user": "62e46da8f906333eda94b3b4",
+    "createdAt": "2022-07-29T23:43:26.662Z",
+    "updatedAt": "2022-07-29T23:43:26.662Z"
+  },
+  {
+    "_id": "62e470aaf906333eda94b417",
+    "text": "Buy a new car",
+    "user": "62e46da8f906333eda94b3b4",
+    "createdAt": "2022-07-29T23:43:38.572Z",
+    "updatedAt": "2022-07-29T23:43:38.572Z"
+  },
+  {
+    "_id": "62e470b7f906333eda94b41b",
+    "text": "Lose weight",
+    "user": "62e46da8f906333eda94b3b4",
+    "createdAt": "2022-07-29T23:43:51.978Z",
+    "updatedAt": "2022-07-29T23:43:51.978Z"
+  },
+  {
+    "_id": "62e470e1f906333eda94b428",
+    "text": "Volunteer more often",
+    "user": "62e46d60f906333eda94b3ae",
+    "createdAt": "2022-07-29T23:44:33.764Z",
+    "updatedAt": "2022-07-29T23:44:33.764Z"
+  },
+  {
+    "_id": "62e470ebf906333eda94b42c",
+    "text": "Disconnect from technology",
+    "user": "62e46d60f906333eda94b3ae",
+    "createdAt": "2022-07-29T23:44:43.850Z",
+    "updatedAt": "2022-07-29T23:44:43.850Z"
+  },
+  {
+    "_id": "62e470faf906333eda94b430",
+    "text": "Remodel my home",
+    "user": "62e46d60f906333eda94b3ae",
+    "createdAt": "2022-07-29T23:44:58.224Z",
+    "updatedAt": "2022-07-29T23:44:58.224Z"
+  },
+  {
+    "_id": "62e4711af906333eda94b439",
+    "text": "Quit my vices",
+    "user": "62e46b6bf906333eda94b3a8",
+    "createdAt": "2022-07-29T23:45:30.520Z",
+    "updatedAt": "2022-07-29T23:45:30.520Z"
+  },
+  {
+    "_id": "62e47126f906333eda94b43d",
+    "text": "Redecorate my home",
+    "user": "62e46b6bf906333eda94b3a8",
+    "createdAt": "2022-07-29T23:45:42.067Z",
+    "updatedAt": "2022-07-29T23:45:42.067Z"
+  },
+  {
+    "_id": "62e47131f906333eda94b441",
+    "text": "Cook more frequently",
+    "user": "62e46b6bf906333eda94b3a8",
+    "createdAt": "2022-07-29T23:45:53.170Z",
+    "updatedAt": "2022-07-29T23:45:53.170Z"
+  },
+  {
+    "_id": "62e4714ef906333eda94b44a",
+    "text": "Organize closet",
+    "user": "62e46e3af906333eda94b3c0",
+    "createdAt": "2022-07-29T23:46:22.241Z",
+    "updatedAt": "2022-07-29T23:46:22.241Z"
+  },
+  {
+    "_id": "62e47159f906333eda94b44e",
+    "text": "Bring a pet into the family",
+    "user": "62e46e3af906333eda94b3c0",
+    "createdAt": "2022-07-29T23:46:33.720Z",
+    "updatedAt": "2022-07-29T23:46:33.720Z"
+  },
+  {
+    "_id": "62e47166f906333eda94b452",
+    "text": "Spend more time with friends",
+    "user": "62e46e3af906333eda94b3c0",
+    "createdAt": "2022-07-29T23:46:46.244Z",
+    "updatedAt": "2022-07-29T23:46:46.244Z"
+  }
+]
