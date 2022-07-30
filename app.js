@@ -80,7 +80,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 app.get('/', (req, res) => {
   res
     .status(StatusCodes.OK)
-    .json('<div><h1>Goal-API</h1><a href="/api-docs">Documentation</a></div>');
+    .send('<div><h1>Goal-API</h1><a href="/api-docs">Documentation</a></div>');
 });
 
 // routes middleware
