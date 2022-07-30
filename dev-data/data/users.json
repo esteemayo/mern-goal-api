@@ -1,0 +1,79 @@
+[
+  {
+    "_id": "62e46b6bf906333eda94b3a8",
+    "name": "Emmanuel Adebayo",
+    "email": "admin@goals.com",
+    "avatar": "https://firebasestorage.googleapis.com/v0/b/mern-goals.appspot.com/o/users%2F1659136866921-my-image.jpg?alt=media&token=25219d14-7cdc-4a22-b129-e976ce778189",
+    "role": "admin",
+    "password": "$2a$12$ZVB6oZYTn1TCZadgarjXReGx5yEtnR/W.wNdd34v5MkKOP2PPYO/6",
+    "active": true,
+    "createdAt": "2022-07-29T23:21:15.143Z",
+    "updatedAt": "2022-07-29T23:21:15.143Z"
+  },
+  {
+    "_id": "62e46d60f906333eda94b3ae",
+    "name": "Maye Wintheiser",
+    "email": "maye.admin@goals.com",
+    "avatar": "https://firebasestorage.googleapis.com/v0/b/mern-goals.appspot.com/o/users%2F1659137362678-user-10.jpg?alt=media&token=e4a9aa9b-1c1d-4585-ae9c-e49a37382607",
+    "role": "admin",
+    "password": "$2a$12$iReiO.tRSF0kYjuWlleEEOO/6nkc6BdcBrWiGZwMBPIHuIu4Eds4y",
+    "active": true,
+    "createdAt": "2022-07-29T23:29:36.943Z",
+    "updatedAt": "2022-07-29T23:29:36.943Z"
+  },
+  {
+    "_id": "62e46da8f906333eda94b3b4",
+    "name": "John Doe",
+    "email": "jdoe@example.com",
+    "avatar": "https://firebasestorage.googleapis.com/v0/b/mern-goals.appspot.com/o/users%2F1659137416888-user-11.jpg?alt=media&token=9fa973d5-0e2b-46e8-a94f-e801d9440553",
+    "role": "user",
+    "password": "$2a$12$.Ah61bA/OnvgcwUTZIIIbOvyX19uLdUkNJWqtV5M8I85QsDBM0SEC",
+    "active": true,
+    "createdAt": "2022-07-29T23:30:48.094Z",
+    "updatedAt": "2022-07-29T23:30:48.094Z"
+  },
+  {
+    "_id": "62e46debf906333eda94b3ba",
+    "name": "Mary Doe",
+    "email": "mdoe@example.com",
+    "avatar": "https://firebasestorage.googleapis.com/v0/b/mern-goals.appspot.com/o/users%2F1659137490003-user-2.jpg?alt=media&token=7e6b900f-4040-4806-87d8-099f0e4a88eb",
+    "role": "user",
+    "password": "$2a$12$lRKXsFG4Rl6EVnu14LqQI..aF2Dhy8pqtv5Roz8wybynE1L1G6gF.",
+    "active": true,
+    "createdAt": "2022-07-29T23:31:55.828Z",
+    "updatedAt": "2022-07-29T23:31:55.828Z"
+  },
+  {
+    "_id": "62e46e3af906333eda94b3c0",
+    "name": "Lourdes Browning",
+    "email": "loulou@example.com",
+    "avatar": "https://firebasestorage.googleapis.com/v0/b/mern-goals.appspot.com/o/users%2F1659137577593-user-7.jpg?alt=media&token=cb367d3e-e0c7-40e8-8dcd-74636659f896",
+    "role": "user",
+    "password": "$2a$12$VKITTJrRgYoQK9vY5yrHv.AKbr/GCAPMQ9kT0HTh2rWlp9528/OIu",
+    "active": true,
+    "createdAt": "2022-07-29T23:33:14.209Z",
+    "updatedAt": "2022-07-29T23:33:14.209Z"
+  },
+  {
+    "_id": "62e46e64f906333eda94b3c6",
+    "name": "Chris Vega",
+    "email": "chris@example.com",
+    "avatar": "https://firebasestorage.googleapis.com/v0/b/mern-goals.appspot.com/o/users%2F1659137609065-user-9.jpg?alt=media&token=1227a414-d4c4-4857-af4f-cc0d5e93e2e6",
+    "role": "user",
+    "password": "$2a$12$iUGWBn.omWvw9ZQ3bNaZ8uUq5ABFbfbU48k.0eKEki0ztuIHXd0vS",
+    "active": true,
+    "createdAt": "2022-07-29T23:33:56.835Z",
+    "updatedAt": "2022-07-29T23:33:56.835Z"
+  },
+  {
+    "_id": "62e46eddf906333eda94b3cc",
+    "name": "Kate Morrison",
+    "email": "kate@example.com",
+    "avatar": "https://firebasestorage.googleapis.com/v0/b/mern-goals.appspot.com/o/users%2F1659137730322-monica.jpg?alt=media&token=832cc8a2-54b2-41df-ac89-d1d4910c2769",
+    "role": "user",
+    "password": "$2a$12$svnjQMvhooQ5yCF4Gnm5a.nD9Nr5lA8ybREj7kH5P4HZEU7cyvISW",
+    "active": true,
+    "createdAt": "2022-07-29T23:35:57.926Z",
+    "updatedAt": "2022-07-29T23:35:57.926Z"
+  }
+]
