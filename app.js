@@ -8,8 +8,13 @@ const xss = require('xss-clean');
 const compression = require('compression');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+
+const swaggerDoc = YAML.load('./swagger.yaml');
 
 // requiring routes
+const { StatusCodes } = require('http-status-codes');
 const goalRouter = require('./routes/goals');
 const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
@@ -67,6 +72,15 @@ app.use(compression());
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   next();
+});
+
+// swagger
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
+
+app.get('/', (req, res) => {
+  res
+    .status(StatusCodes.OK)
+    .json('<div><h1>Goal-API</h1><a href="/api-docs">Documentation</a></div>');
 });
 
 // routes middleware

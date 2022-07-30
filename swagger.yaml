@@ -1,0 +1,549 @@
+openapi: 3.0.0
+info:
+  title: Goal-API
+  contact:
+    name: Emmanuel Adebayo
+    email: eadebayo15@gmail.com
+  version: '1.0'
+servers:
+  - url: https://api-goal.herokuapp.com/api/v1
+    variables: {}
+paths:
+  /goals:
+    get:
+      tags:
+        - Goal
+      summary: GET ALL GOALS
+      operationId: GETALLGOALS
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    post:
+      tags:
+        - Goal
+      summary: CREATE NEW GOAL
+      operationId: CREATENEWGOAL
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CREATENEWGOALREQUEST'
+            example:
+              text: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /goals/admin:
+    get:
+      tags:
+        - Goal
+      summary: GET ALL GOALS BY ADMIN
+      operationId: GETALLGOALSBYADMIN
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /goals/search:
+    get:
+      tags:
+        - Goal
+      summary: SEARCH GOAL
+      operationId: SEARCHGOAL
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /goals/details/{slug}:
+    parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+        description: The Goal SLUG
+    get:
+      tags:
+        - Goal
+      summary: GET GOAL BY SLUG
+      operationId: GETGOALBYSLUG
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /goals/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The Goal ID
+    get:
+      tags:
+        - Goal
+      summary: GET GOAL BY ID
+      operationId: GETGOALBYID
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    patch:
+      tags:
+        - Goal
+      summary: UPDATE GOAL
+      operationId: UPDATEGOAL
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UPDATEGOALREQUEST'
+            example:
+              text: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    delete:
+      tags:
+        - Goal
+      summary: DELETE GOAL
+      operationId: DELETEGOAL
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /users:
+    get:
+      tags:
+        - User
+      summary: GET ALL USERS
+      operationId: GETALLUSERS
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    post:
+      tags:
+        - User
+      summary: CREATE NEW USER
+      operationId: CREATENEWUSER
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /users/stats:
+    get:
+      tags:
+        - User
+      summary: GET USER STATS
+      operationId: GETUSERSTATS
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /users/me:
+    get:
+      tags:
+        - User
+      summary: GET CURRENT USER
+      operationId: GETCURRENTUSER
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /users/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The User ID
+    get:
+      tags:
+        - User
+      summary: GET USER
+      operationId: GETUSER
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    patch:
+      tags:
+        - User
+      summary: UPDATE USER
+      operationId: UPDATEUSER
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          text/plain:
+            schema:
+              type: object
+              example: {}
+            example: {}
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    delete:
+      tags:
+        - User
+      summary: DELETE USER
+      operationId: DELETEUSER
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /users/register:
+    post:
+      tags:
+        - User
+      summary: REGISTER USER
+      operationId: REGISTERUSER
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/REGISTERUSERREQUEST'
+            example:
+              name: ''
+              email: ''
+              password: ''
+              confirmPassword: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /users/update-me:
+    patch:
+      tags:
+        - User
+      summary: UPDATE CURRENT USER DATA
+      operationId: UPDATECURRENTUSERDATA
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UPDATECURRENTUSERDATAREQUEST'
+            example:
+              name: ''
+              email: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /users/delete-me:
+    delete:
+      tags:
+        - User
+      summary: DELETE CURRENT USER
+      operationId: DELETECURRENTUSER
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: LOGIN USER
+      operationId: LOGINUSER
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LOGINUSERREQUEST'
+            example:
+              email: ''
+              password: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /auth/forgot-password:
+    post:
+      tags:
+        - Auth
+      summary: FORGOT PASSWORD
+      operationId: FORGOTPASSWORD
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FORGOTPASSWORDREQUEST'
+            example:
+              email: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /auth/reset-password/{token}:
+    parameters:
+      - in: path
+        name: token
+        schema:
+          type: string
+        required: true
+        description: The Password Reset TOKEN
+    post:
+      tags:
+        - Auth
+      summary: RESET PASSWORD
+      operationId: RESETPASSWORD
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RESETPASSWORDREQUEST'
+            example:
+              password: ''
+              confirmPassword: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /auth/update-my-password:
+    patch:
+      tags:
+        - Auth
+      summary: UPDATE CURRENT USER PASSWORD
+      operationId: UPDATECURRENTUSERPASSWORD
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UPDATECURRENTUSERPASSWORDREQUEST'
+            example:
+              currentPassword: ''
+              password: ''
+              confirmPassword: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+components:
+  schemas:
+    CREATENEWGOALREQUEST:
+      title: CREATE NEW GOAL REQUEST
+      required:
+        - text
+      type: object
+      properties:
+        text:
+          type: string
+      example:
+        text: ''
+    UPDATEGOALREQUEST:
+      title: UPDATE GOAL REQUEST
+      required:
+        - text
+      type: object
+      properties:
+        text:
+          type: string
+      example:
+        text: ''
+    REGISTERUSERREQUEST:
+      title: REGISTER USER REQUEST
+      required:
+        - name
+        - email
+        - password
+        - confirmPassword
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        confirmPassword:
+          type: string
+      example:
+        name: ''
+        email: ''
+        password: ''
+        confirmPassword: ''
+    UPDATECURRENTUSERDATAREQUEST:
+      title: UPDATE CURRENT USER DATA REQUEST
+      required:
+        - name
+        - email
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+      example:
+        name: ''
+        email: ''
+    LOGINUSERREQUEST:
+      title: LOGIN USER REQUEST
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: ''
+        password: ''
+    FORGOTPASSWORDREQUEST:
+      title: FORGOT PASSWORD REQUEST
+      required:
+        - email
+      type: object
+      properties:
+        email:
+          type: string
+      example:
+        email: ''
+    RESETPASSWORDREQUEST:
+      title: RESET PASSWORD REQUEST
+      required:
+        - password
+        - confirmPassword
+      type: object
+      properties:
+        password:
+          type: string
+        confirmPassword:
+          type: string
+      example:
+        password: ''
+        confirmPassword: ''
+    UPDATECURRENTUSERPASSWORDREQUEST:
+      title: UPDATE CURRENT USER PASSWORD REQUEST
+      required:
+        - currentPassword
+        - password
+        - confirmPassword
+      type: object
+      properties:
+        currentPassword:
+          type: string
+        password:
+          type: string
+        confirmPassword:
+          type: string
+      example:
+        currentPassword: ''
+        password: ''
+        confirmPassword: ''
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security: []
+tags:
+  - name: Goal
+  - name: User
+  - name: Auth
