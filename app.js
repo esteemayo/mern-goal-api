@@ -20,6 +20,7 @@ const NotFoundError = require('./errors/notFound');
 const app = express();
 
 // global middlewares
+app.set('trust proxy', 1);
 // implement CORS
 app.use(cors());
 
