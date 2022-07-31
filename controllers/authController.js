@@ -55,9 +55,12 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
   const resetToken = user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false });
 
-  const resetURL = `${req.protocol}://${req.get(
-    'host'
-  )}/api/v1/auth/reset-password/${resetToken}`;
+  // const resetURL = `${req.protocol}://${req.get(
+  //   'host'
+  // )}/api/v1/auth/reset-password/${resetToken}`;
+
+  // const resetURL = `http://localhost:3000/reset-password/${resetToken}`;
+  const resetURL = `https://app-goalsetter.netlify.app/reset-password/${resetToken}`;
 
   const message = `
     Hi ${user.name},
