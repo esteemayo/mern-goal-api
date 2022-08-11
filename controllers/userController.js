@@ -9,16 +9,15 @@ const factory = require('./handlerFactory');
 const createSendToken = require('../utils/createSendToken');
 
 exports.registerUser = asyncHandler(async (req, res, next) => {
-  const userData = _.pick(
-    req.body,
+  const userData = _.pick(req.body, [
     'name',
     'email',
     'role',
     'avatar',
     'password',
     'confirmPassword',
-    'passwordChangedAt'
-  );
+    'passwordChangedAt',
+  ]);
 
   const user = await User.create({ ...userData });
 
