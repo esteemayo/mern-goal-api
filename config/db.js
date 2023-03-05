@@ -1,7 +1,6 @@
 /* eslint-disable */
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-require('colors');
 
 dotenv.config({ path: './config.env' });
 
