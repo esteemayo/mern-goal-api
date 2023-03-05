@@ -14,12 +14,12 @@ import YAML from 'yamljs';
 const swaggerDoc = YAML.load('./swagger.yaml');
 
 // requiring routes
-const { StatusCodes } = require('http-status-codes');
-const goalRouter = require('./routes/goals');
-const userRouter = require('./routes/users');
-const authRouter = require('./routes/auth');
-const globalErrorHandler = require('./middleware/errorHandler');
-const NotFoundError = require('./errors/notFound');
+import { StatusCodes } from 'http-status-codes';
+import goalRouter from './routes/goals.js';
+import userRouter from './routes/users.js';
+import authRouter from './routes/auth.js';
+import globalErrorHandler from './middleware/errorHandler.js';
+import NotFoundError from './errors/notFound.js';
 
 // start express app
 const app = express();
