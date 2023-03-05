@@ -1,15 +1,15 @@
-const express = require('express');
-const morgan = require('morgan');
-const cors = require('cors');
-const rateLimit = require('express-rate-limit');
-const helmet = require('helmet');
-const mongoSanitize = require('express-mongo-sanitize');
-const xss = require('xss-clean');
-const compression = require('compression');
-const hpp = require('hpp');
-const cookieParser = require('cookie-parser');
-const swaggerUi = require('swagger-ui-express');
-const YAML = require('yamljs');
+import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+import rateLimit from 'express-rate-limit';
+import helmet from 'helmet';
+import mongoSanitize from 'express-mongo-sanitize';
+import xss from 'xss-clean';
+import compression from 'compression';
+import hpp from 'hpp';
+import cookieParser from 'cookie-parser';
+import swaggerUi from 'swagger-ui-express';
+import YAML from 'yamljs';
 
 const swaggerDoc = YAML.load('./swagger.yaml');
 
