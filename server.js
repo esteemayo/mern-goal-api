@@ -1,6 +1,6 @@
 /* eslint-disable */
-const dotenv = require('dotenv');
-require('colors');
+import dotenv from 'dotenv';
+import 'colors';
 
 const connectDB = require('./config/db');
 
