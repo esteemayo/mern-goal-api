@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post('/register', userController.registerUser);
 
-router.use(protect);
+router.use(authMiddleware.protect);
 
 router.get(
   '/stats',
