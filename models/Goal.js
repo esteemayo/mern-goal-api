@@ -1,5 +1,5 @@
-const slugify = require('slugify');
-const mongoose = require('mongoose');
+import slugify 'slugify';
+import mongoose 'mongoose';
 
 const goalSchema = new mongoose.Schema(
   {
