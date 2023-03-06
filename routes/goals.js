@@ -16,7 +16,7 @@ router.get(
 
 router.get('/search', goalController.searchGoal);
 
-router.get('/details/:slug', goalController.getAllGoalBySlug);
+router.get('/details/:slug', goalController.getGoalBySlug);
 
 router
   .route('/')
