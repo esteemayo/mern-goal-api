@@ -47,4 +47,4 @@ goalSchema.pre(/^find/, function (next) {
 
 const Goal = mongoose.models.Goal || mongoose.model('Goal', goalSchema);
 
-module.exports = Goal;
+export default Goal;
