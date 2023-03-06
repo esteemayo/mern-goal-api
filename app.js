@@ -18,7 +18,7 @@ import { StatusCodes } from 'http-status-codes';
 import goalRouter from './routes/goals.js';
 import userRouter from './routes/users.js';
 import authRouter from './routes/auth.js';
-import globalErrorHandler from './middleware/errorHandler.js';
+import errorHandlerMiddleware from './middleware/errorHandler.js';
 import NotFoundError from './errors/notFound.js';
 
 // start express app
@@ -92,6 +92,6 @@ app.all('*', (req, res, next) =>
   next(new NotFoundError(`Can't find ${req.originalUrl} on this server`))
 );
 
-app.use(globalErrorHandler);
+app.use(errorHandlerMiddleware);
 
 export default app;
