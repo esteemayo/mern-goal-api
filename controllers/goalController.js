@@ -73,7 +73,7 @@ const getGoalById = asyncHandler(async (req, res, next) => {
   );
 });
 
-const getAllGoalBySlug = asyncHandler(async (req, res, next) => {
+const getGoalBySlug = asyncHandler(async (req, res, next) => {
   const { slug } = req.params;
 
   const goal = await Goal.findOne({ slug });
@@ -163,7 +163,7 @@ const goalController = {
   getAllGoalsByAdmin,
   searchGoal,
   getGoalById,
-  getAllGoalBySlug,
+  getGoalBySlug,
   createGoal,
   updateGoal,
   deleteGoal,
