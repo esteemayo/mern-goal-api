@@ -125,3 +125,5 @@ const userController = {
   updateUser,
   deleteUser,
 };
+
+export default userController;
