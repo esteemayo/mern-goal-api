@@ -8,6 +8,7 @@ import sendEmail from '../utils/email.js';
 import CustomAPIError from '../errors/customAPIError.js';
 import BadRequestError from '../errors/badRequest.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
+import createSendToken from '../utils/createSendToken.js';
 
 const loginUser = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
