@@ -157,3 +157,16 @@ const deleteGoal = asyncHandler(async (req, res, next) => {
     new ForbiddenError('You are not permitted to perform this action')
   );
 });
+
+const goalController = {
+  getAllGoals,
+  getAllGoalsByAdmin,
+  searchGoal,
+  getGoalById,
+  getAllGoalBySlug,
+  createGoal,
+  updateGoal,
+  deleteGoal,
+};
+
+export default goalController;
