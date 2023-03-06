@@ -24,7 +24,7 @@ router.delete('/delete-me', userController.deleteMe);
 
 router
   .route('/')
-  .get(authController.restrictTo('admin'), userController.getAllUsers)
+  .get(authMiddleware.restrictTo('admin'), userController.getAllUsers)
   .post(userController.createUser);
 
 router.use(authController.restrictTo('admin'));
