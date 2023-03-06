@@ -4,8 +4,8 @@ import dotenv from 'dotenv';
 import 'colors';
 
 // models
-const Goal = require('../../models/Goal');
-const User = require('../../models/User');
+import Goal from '../../models/Goal.js';
+import User from '../../models/User.js';
 
 dotenv.config({ path: './config.env' });
 const connectDB = require('../../config/db');
