@@ -112,3 +112,16 @@ const getAllUsers = factory.getAll(User);
 const getUser = factory.getOne(User);
 const updateUser = factory.updateOne(User);
 const deleteUser = factory.deleteOne(User);
+
+const userController = {
+  registerUser,
+  getUserStats,
+  updateMe,
+  deleteMe,
+  getMe,
+  createUser,
+  getAllUsers,
+  getUser,
+  updateUser,
+  deleteUser,
+};
