@@ -2,14 +2,14 @@ import crypto from 'crypto';
 import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
-const User = require('../models/User');
-const NotFoundError = require('../errors/notFound');
-const sendEmail = require('../utils/email');
-const CustomAPIError = require('../errors/customAPIError');
-const BadRequestError = require('../errors/badRequest');
-const ForbiddenError = require('../errors/forbidden');
-const createSendToken = require('../utils/createSendToken');
-const UnauthenticatedError = require('../errors/unauthenticated');
+import User from '../models/User.js';
+import NotFoundError from '../errors/notFound.js';
+import sendEmail from '../utils/email.js';
+import CustomAPIError from '../errors/customAPIError.js';
+import BadRequestError from '../errors/badRequest.js';
+import ForbiddenError from '../errors/forbidden.js';
+import createSendToken from '../utils/createSendToken.js';
+import UnauthenticatedError from '../errors/unauthenticated.js';
 
 exports.loginUser = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
@@ -29,14 +29,14 @@ exports.loginUser = asyncHandler(async (req, res, next) => {
 
 exports.restrictTo =
   (...roles) =>
-  (req, res, next) => {
-    if (!roles.includes(req.user.role)) {
-      return next(
-        new ForbiddenError('You do not have permission to perform this action')
-      );
-    }
-    next();
-  };
+    (req, res, next) => {
+      if (!roles.includes(req.user.role)) {
+        return next(
+          new ForbiddenError('You do not have permission to perform this action')
+        );
+      }
+      next();
+    };
 
 exports.forgotPassword = asyncHandler(async (req, res, next) => {
   const { email } = req.body;
