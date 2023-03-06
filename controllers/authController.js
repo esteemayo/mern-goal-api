@@ -144,3 +144,13 @@ const updateMyPassword = asyncHandler(async (req, res, next) => {
 
   createSendToken(user, StatusCodes.OK, req, res);
 });
+
+const authController = {
+  loginUser,
+  restrictTo,
+  forgotPassword,
+  resetPassword,
+  updateMyPassword,
+};
+
+export default authController;
