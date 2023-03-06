@@ -95,3 +95,13 @@ const deleteOne = (Model) =>
       doc: null,
     });
   });
+
+const factory = {
+  getAll,
+  getOne,
+  createOne,
+  updateOne,
+  deleteOne,
+};
+
+export default factory;
