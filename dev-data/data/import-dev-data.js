@@ -1,7 +1,7 @@
 /* eslint-disable */
-const fs = require('fs');
-const dotenv = require('dotenv');
-require('colors');
+import fs from 'fs';
+import dotenv from 'dotenv';
+import 'colors';
 
 // models
 const Goal = require('../../models/Goal');
