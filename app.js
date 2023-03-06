@@ -20,6 +20,9 @@ import userRouter from './routes/users.js';
 import errorHandlerMiddleware from './middleware/errorHandler.js';
 import NotFoundError from './errors/notFound.js';
 
+dotenv.config({ path: './config.env' });
+const swaggerDoc = YAML.load('./swagger.yaml');
+
 // start express app
 const app = express();
 
