@@ -1,5 +1,5 @@
-const { StatusCodes } = require('http-status-codes');
-const asyncHandler = require('express-async-handler');
+import { StatusCodes } from 'http-status-codes';
+import asyncHandlerfrom 'express-async-handler';
 
 const APIFeatures = require('../utils/apiFeatures');
 const NotFoundError = require('../errors/notFound');
