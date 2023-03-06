@@ -1,8 +1,8 @@
 import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
-import APIFeaturesfrom '../utils/apiFeatures.js';
-import NotFoundErrorfrom '../errors/notFound.js';
+import APIFeatures from '../utils/apiFeatures.js';
+import NotFoundError from '../errors/notFound.js';
 
 exports.getAll = (Model) =>
   asyncHandler(async (req, res, next) => {
