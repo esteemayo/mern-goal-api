@@ -13,9 +13,6 @@ import YAML from 'yamljs';
 import { StatusCodes } from 'http-status-codes';
 import dotenv from 'dotenv';
 
-dotenv.config({ path: './config.env' });
-const swaggerDoc = YAML.load('./swagger.yaml');
-
 // requiring routes
 import goalRouter from './routes/goals.js';
 import authRouter from './routes/auth.js';
