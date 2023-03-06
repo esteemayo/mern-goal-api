@@ -1,6 +1,6 @@
-const crypto = require('crypto');
-const { StatusCodes } = require('http-status-codes');
-const asyncHandler = require('express-async-handler');
+import crypto from 'crypto';
+import { StatusCodes } from 'http-status-codes';
+import asyncHandler from 'express-async-handler';
 
 const User = require('../models/User');
 const NotFoundError = require('../errors/notFound');
