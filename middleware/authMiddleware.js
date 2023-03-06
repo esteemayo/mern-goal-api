@@ -44,4 +44,8 @@ const protect = asyncHandler(async (req, res, next) => {
   next();
 });
 
-module.exports = protect;
+const authMiddleware = {
+  protect,
+};
+
+export default authMiddleware;
