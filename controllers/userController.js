@@ -1,6 +1,6 @@
-const _ = require('lodash');
-const { StatusCodes } = require('http-status-codes');
-const asyncHandler = require('express-async-handler');
+import _ from 'lodash';
+import { StatusCodes } from 'http-status-codes';
+import asyncHandler from 'express-async-handler';
 
 const User = require('../models/User');
 const Goal = require('../models/Goal');
