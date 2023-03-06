@@ -2,8 +2,8 @@ import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
 import asyncHandler from 'express-async-handler';
 
-const User = require('../models/User');
-const UnauthenticatedError = require('../errors/unauthenticated');
+import User from '../models/User.js';
+import UnauthenticatedError from '../errors/unauthenticated.js';
 
 const protect = asyncHandler(async (req, res, next) => {
   let token;
