@@ -1,5 +1,4 @@
 /* eslint-disable */
-import dotenv from 'dotenv';
 import 'colors';
 
 import app from './app.js';
