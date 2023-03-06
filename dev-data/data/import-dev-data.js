@@ -8,7 +8,7 @@ import Goal from '../../models/Goal.js';
 import User from '../../models/User.js';
 
 dotenv.config({ path: './config.env' });
-const connectDB = require('../../config/db');
+import connectDB from '../../config/db.js';
 
 // database connection
 connectDB();
