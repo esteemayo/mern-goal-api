@@ -10,6 +10,7 @@ import hpp from 'hpp';
 import cookieParser from 'cookie-parser';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
+import { StatusCodes } from 'http-status-codes';
 
 const swaggerDoc = YAML.load('./swagger.yaml');
 
