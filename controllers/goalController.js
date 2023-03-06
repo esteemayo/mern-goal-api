@@ -1,10 +1,10 @@
 import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
-const Goal = require('../models/Goal');
-const APIFeatures = require('../utils/apiFeatures');
-const NotFoundError = require('../errors/notFound');
-const ForbiddenError = require('../errors/forbidden');
+import Goal from '../models/Goal.js';
+import APIFeatures from '../utils/apiFeatures.js';
+import NotFoundError from '../errors/notFound.js';
+import ForbiddenError from '../errors/forbidden.js';
 
 exports.getAllGoals = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(Goal.find({ user: req.user.id }), req.query)
