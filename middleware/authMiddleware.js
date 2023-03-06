@@ -1,6 +1,6 @@
-const jwt = require('jsonwebtoken');
-const { promisify } = require('util');
-const asyncHandler = require('express-async-handler');
+import jwt from 'jsonwebtoken';
+import { promisify } from 'util';
+import asyncHandler from 'express-async-handler';
 
 const User = require('../models/User');
 const UnauthenticatedError = require('../errors/unauthenticated');
