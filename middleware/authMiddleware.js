@@ -58,9 +58,17 @@ const restrictTo =
       next();
     };
 
+const verifyUser = (req, res, next) => {
+  if (req.user.id === req.params.id) {
+    return next();
+  }
+  return next(new ForbiddenError('You do not have permission to perform this operation'));
+};
+
 const authMiddleware = {
   protect,
   restrictTo,
+  verifyUser,
 };
 
 export default authMiddleware;
