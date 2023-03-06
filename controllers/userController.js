@@ -27,26 +27,7 @@ const registerUser = asyncHandler(async (req, res, next) => {
 });
 
 const getUserStats = asyncHandler(async (req, res, next) => {
-  const date = new Date();
-  const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
-  const prevYear = new Date(date.setFullYear(lastYear.getFullYear() - 1));
-
-  const stats = await User.aggregate([
-    {
-      $match: { createdAt: { $gte: prevYear } },
-    },
-    {
-      $project: {
-        month: { $month: '$createdAt' },
-      },
-    },
-    {
-      $group: {
-        _id: '$month',
-        total: { $sum: 1 },
-      },
-    },
-  ]);
+  const stats = await User.getUserStats();
 
   res.status(StatusCodes.OK).json({
     status: 'success',
