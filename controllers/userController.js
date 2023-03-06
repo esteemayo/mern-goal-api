@@ -2,11 +2,11 @@ import _ from 'lodash';
 import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
-const User = require('../models/User');
-const Goal = require('../models/Goal');
-const BadRequestError = require('../errors/badRequest');
-const factory = require('./handlerFactory');
-const createSendToken = require('../utils/createSendToken');
+import User from '../models/User.js';
+import Goal from '../models/Goal.js';
+import BadRequestError from '../errors/badRequest.js';
+import factory from './handlerFactory.js';
+import createSendToken from '../utils/createSendToken.js';
 
 exports.registerUser = asyncHandler(async (req, res, next) => {
   const userData = _.pick(req.body, [
@@ -62,8 +62,7 @@ exports.updateMe = asyncHandler(async (req, res, next) => {
   if (password || confirmPassword) {
     return next(
       new BadRequestError(
-        `This route is not for password updates. Please use update ${
-          req.protocol
+        `This route is not for password updates. Please use update ${req.protocol
         }://${req.get('host')}/api/v1/auth/update-my-password`
       )
     );
