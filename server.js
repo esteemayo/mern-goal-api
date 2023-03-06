@@ -20,6 +20,14 @@ const server = app.listen(app.get('port'), async () => {
   console.log(`Server running on port → ${server.address().port}`.cyan.bold)
 });
 
+process.on('unhandledRejection', (err) => {
+  console.log('UNHANDLED REJECTION! 🔥 Shutting down'.red.bold);
+  console.log(err.name, err.message);
+  server.close(() => {
+    process.exit(1);
+  });
+});
+
 process.on('SIGTERM', () => {
   console.log('👏 SIGTERM RECEIVED, Shutting down gracefully');
   server.close(() => {
