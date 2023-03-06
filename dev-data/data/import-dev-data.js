@@ -12,6 +12,9 @@ import User from '../../models/User.js';
 
 dotenv.config({ path: './config.env' });
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // database connection
 connectDB();
 
