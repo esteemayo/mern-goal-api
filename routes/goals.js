@@ -10,7 +10,7 @@ router.use(authMiddleware.protect);
 
 router.get(
   '/admin',
-  authController.restrictTo('admin'),
+  authMiddleware.restrictTo('admin'),
   goalController.getAllGoalsByAdmin
 );
 
