@@ -8,7 +8,7 @@ import BadRequestError from '../errors/badRequest.js';
 import factory from './handlerFactory.js';
 import createSendToken from '../utils/createSendToken.js';
 
-exports.registerUser = asyncHandler(async (req, res, next) => {
+const registerUser = asyncHandler(async (req, res, next) => {
   const userData = _.pick(req.body, [
     'name',
     'email',
@@ -26,7 +26,7 @@ exports.registerUser = asyncHandler(async (req, res, next) => {
   }
 });
 
-exports.getUserStats = asyncHandler(async (req, res, next) => {
+const getUserStats = asyncHandler(async (req, res, next) => {
   const date = new Date();
   const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
   const prevYear = new Date(date.setFullYear(lastYear.getFullYear() - 1));
@@ -56,7 +56,7 @@ exports.getUserStats = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.updateMe = asyncHandler(async (req, res, next) => {
+const updateMe = asyncHandler(async (req, res, next) => {
   const { password, confirmPassword } = req.body;
 
   if (password || confirmPassword) {
@@ -84,7 +84,7 @@ exports.updateMe = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.deleteMe = asyncHandler(async (req, res, next) => {
+const deleteMe = asyncHandler(async (req, res, next) => {
   const user = await User.findByIdAndUpdate(req.user.id, { active: false });
   await Goal.deleteMany({ user: user._id });
 
@@ -94,12 +94,12 @@ exports.deleteMe = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getMe = (req, res, next) => {
+const getMe = (req, res, next) => {
   req.params.id = req.user.id;
   next();
 };
 
-exports.createUser = (req, res) => {
+const createUser = (req, res) => {
   res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
     status: 'fail',
     message: `This route is not defined! Please use ${req.protocol}://${req.get(
@@ -108,7 +108,7 @@ exports.createUser = (req, res) => {
   });
 };
 
-exports.getAllUsers = factory.getAll(User);
-exports.getUser = factory.getOne(User);
-exports.updateUser = factory.updateOne(User);
-exports.deleteUser = factory.deleteOne(User);
+const getAllUsers = factory.getAll(User);
+const getUser = factory.getOne(User);
+const updateUser = factory.updateOne(User);
+const deleteUser = factory.deleteOne(User);
