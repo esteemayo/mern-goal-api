@@ -17,4 +17,4 @@ router.patch(
   authController.updateMyPassword,
 );
 
-module.exports = router;
+export default router;
