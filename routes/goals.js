@@ -1,8 +1,8 @@
 import express from 'express';
 
-const protect = require('../middleware/authMiddleware');
-const authController = require('../controllers/authController');
-const goalController = require('../controllers/goalController');
+import authController from '../controllers/authController.js';
+import authMiddleware from '../middleware/authMiddleware.js';
+import goalController from '../controllers/goalController.js';
 
 const router = express.Router();
 
