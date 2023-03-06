@@ -59,6 +59,7 @@ const restrictTo =
 
 const authMiddleware = {
   protect,
+  restrictTo,
 };
 
 export default authMiddleware;
