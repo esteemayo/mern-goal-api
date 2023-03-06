@@ -1,6 +1,5 @@
 import express from 'express';
 
-import authController from '../controllers/authController.js';
 import authMiddleware from '../middleware/authMiddleware.js';
 import goalController from '../controllers/goalController.js';
 
