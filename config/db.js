@@ -19,8 +19,7 @@ const connectDB = async () => {
       `Connected to MongoDB → ${conn.connection.port}`.gray.bold
     );
   } catch (err) {
-    console.log(err);
-    process.exit(1);
+    throw err;
   }
 };
 
