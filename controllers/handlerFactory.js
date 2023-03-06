@@ -1,5 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
-import asyncHandlerfrom 'express-async-handler';
+import asyncHandler from 'express-async-handler';
 
 import APIFeaturesfrom '../utils/apiFeatures.js';
 import NotFoundErrorfrom '../errors/notFound.js';
