@@ -21,4 +21,4 @@ const sendEmail = async (options) => {
   await smtpTransporter.sendMail(mailOptions);
 };
 
-module.exports = sendEmail;
+export default sendEmail;
