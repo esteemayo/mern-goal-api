@@ -136,7 +136,6 @@ const updateMyPassword = asyncHandler(async (req, res, next) => {
 
 const authController = {
   loginUser,
-  restrictTo,
   forgotPassword,
   resetPassword,
   updateMyPassword,
