@@ -4,7 +4,7 @@ import asyncHandler from 'express-async-handler';
 import APIFeatures from '../utils/apiFeatures.js';
 import NotFoundError from '../errors/notFound.js';
 
-exports.getAll = (Model) =>
+const getAll = (Model) =>
   asyncHandler(async (req, res, next) => {
     const features = new APIFeatures(Model.find(), req.query)
       .filter()
@@ -23,7 +23,7 @@ exports.getAll = (Model) =>
     });
   });
 
-exports.getOne = (Model) =>
+const getOne = (Model) =>
   asyncHandler(async (req, res, next) => {
     const { id: docId } = req.params;
 
@@ -41,7 +41,7 @@ exports.getOne = (Model) =>
     });
   });
 
-exports.createOne = (Model) =>
+const createOne = (Model) =>
   asyncHandler(async (req, res, next) => {
     const doc = await Model.create({ ...req.body });
 
@@ -51,7 +51,7 @@ exports.createOne = (Model) =>
     });
   });
 
-exports.updateOne = (Model) =>
+const updateOne = (Model) =>
   asyncHandler(async (req, res, next) => {
     const { id: docId } = req.params;
 
@@ -78,7 +78,7 @@ exports.updateOne = (Model) =>
     });
   });
 
-exports.deleteOne = (Model) =>
+const deleteOne = (Model) =>
   asyncHandler(async (req, res, next) => {
     const { id: docId } = req.params;
 
