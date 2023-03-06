@@ -1,5 +1,5 @@
-import slugify 'slugify';
-import mongoose 'mongoose';
+import slugify from 'slugify';
+import mongoose from 'mongoose';
 
 const goalSchema = new mongoose.Schema(
   {
