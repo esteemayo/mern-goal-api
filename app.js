@@ -86,7 +86,6 @@ app.get('/', (req, res) => {
 // routes middleware
 app.use('/api/v1/goals', goalRouter);
 app.use('/api/v1/users', userRouter);
-app.use('/api/v1/auth', authRouter);
 
 app.all('*', (req, res, next) =>
   next(new NotFoundError(`Can't find ${req.originalUrl} on this server`))
