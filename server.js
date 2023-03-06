@@ -10,7 +10,7 @@ process.on('uncaughtException', (err) => {
   process.exit(1);
 });
 
-dotenv.config({ path: './config.env' });
+
 
 app.set('port', process.env.PORT || 7777);
 
