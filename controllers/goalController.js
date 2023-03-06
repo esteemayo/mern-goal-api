@@ -6,7 +6,7 @@ import APIFeatures from '../utils/apiFeatures.js';
 import NotFoundError from '../errors/notFound.js';
 import ForbiddenError from '../errors/forbidden.js';
 
-exports.getAllGoals = asyncHandler(async (req, res, next) => {
+const getAllGoals = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(Goal.find({ user: req.user.id }), req.query)
     .filter()
     .sort()
@@ -23,7 +23,7 @@ exports.getAllGoals = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getAllGoalsByAdmin = asyncHandler(async (req, res, next) => {
+const getAllGoalsByAdmin = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(Goal.find(), req.query)
     .filter()
     .sort()
@@ -40,7 +40,7 @@ exports.getAllGoalsByAdmin = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.searchGoal = asyncHandler(async (req, res, next) => {
+const searchGoal = asyncHandler(async (req, res, next) => {
   const { q } = req.query;
   const text = new RegExp(q, 'i');
 
@@ -52,7 +52,7 @@ exports.searchGoal = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getGoalById = asyncHandler(async (req, res, next) => {
+const getGoalById = asyncHandler(async (req, res, next) => {
   const { id: goalId } = req.params;
 
   const goal = await Goal.findById(goalId);
@@ -73,7 +73,7 @@ exports.getGoalById = asyncHandler(async (req, res, next) => {
   );
 });
 
-exports.getAllGoalBySlug = asyncHandler(async (req, res, next) => {
+const getAllGoalBySlug = asyncHandler(async (req, res, next) => {
   const { slug } = req.params;
 
   const goal = await Goal.findOne({ slug });
@@ -94,7 +94,7 @@ exports.getAllGoalBySlug = asyncHandler(async (req, res, next) => {
   );
 });
 
-exports.createGoal = asyncHandler(async (req, res, next) => {
+const createGoal = asyncHandler(async (req, res, next) => {
   if (!req.body.user) req.body.user = req.user.id;
 
   const goal = await Goal.create({ ...req.body });
@@ -105,7 +105,7 @@ exports.createGoal = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.updateGoal = asyncHandler(async (req, res, next) => {
+const updateGoal = asyncHandler(async (req, res, next) => {
   const { id: goalId } = req.params;
 
   const goal = await Goal.findById(goalId);
@@ -135,7 +135,7 @@ exports.updateGoal = asyncHandler(async (req, res, next) => {
   );
 });
 
-exports.deleteGoal = asyncHandler(async (req, res, next) => {
+const deleteGoal = asyncHandler(async (req, res, next) => {
   const { id: goalId } = req.params;
 
   const goal = await Goal.findById(goalId);
