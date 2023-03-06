@@ -10,8 +10,6 @@ process.on('uncaughtException', (err) => {
   process.exit(1);
 });
 
-
-
 app.set('port', process.env.PORT || 7777);
 
 const server = app.listen(app.get('port'), async () => {
