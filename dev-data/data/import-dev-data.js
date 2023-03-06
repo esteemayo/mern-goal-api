@@ -6,6 +6,7 @@ import 'colors';
 // models
 import Goal from '../../models/Goal.js';
 import User from '../../models/User.js';
+import connectDB from '../../config/db.js';
 
 dotenv.config({ path: './config.env' });
 import connectDB from '../../config/db.js';
