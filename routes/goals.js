@@ -6,7 +6,7 @@ import goalController from '../controllers/goalController.js';
 
 const router = express.Router();
 
-router.use(protect);
+router.use(authMiddleware.protect);
 
 router.get(
   '/admin',
