@@ -11,7 +11,7 @@ import ForbiddenError from '../errors/forbidden.js';
 import createSendToken from '../utils/createSendToken.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
 
-exports.loginUser = asyncHandler(async (req, res, next) => {
+const loginUser = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -27,7 +27,7 @@ exports.loginUser = asyncHandler(async (req, res, next) => {
   createSendToken(user, StatusCodes.OK, req, res);
 });
 
-exports.restrictTo =
+const restrictTo =
   (...roles) =>
     (req, res, next) => {
       if (!roles.includes(req.user.role)) {
@@ -38,7 +38,7 @@ exports.restrictTo =
       next();
     };
 
-exports.forgotPassword = asyncHandler(async (req, res, next) => {
+const forgotPassword = asyncHandler(async (req, res, next) => {
   const { email } = req.body;
 
   if (!email) {
@@ -105,7 +105,7 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
   }
 });
 
-exports.resetPassword = asyncHandler(async (req, res, next) => {
+const resetPassword = asyncHandler(async (req, res, next) => {
   const { token } = req.params;
   const { password, confirmPassword } = req.body;
 
@@ -129,7 +129,7 @@ exports.resetPassword = asyncHandler(async (req, res, next) => {
   createSendToken(user, StatusCodes.OK, req, res);
 });
 
-exports.updateMyPassword = asyncHandler(async (req, res, next) => {
+const updateMyPassword = asyncHandler(async (req, res, next) => {
   const { password, confirmPassword, currentPassword } = req.body;
 
   const user = await User.findById(req.user.id).select('+password');
