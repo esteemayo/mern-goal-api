@@ -16,6 +16,7 @@ const swaggerDoc = YAML.load('./swagger.yaml');
 
 // requiring routes
 import goalRouter from './routes/goals.js';
+import authRouter from './routes/auth.js';
 import userRouter from './routes/users.js';
 import errorHandlerMiddleware from './middleware/errorHandler.js';
 import NotFoundError from './errors/notFound.js';
