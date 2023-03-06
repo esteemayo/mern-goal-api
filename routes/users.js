@@ -12,7 +12,7 @@ router.use(authMiddleware.protect);
 
 router.get(
   '/stats',
-  authController.restrictTo('admin'),
+  authMiddleware.restrictTo('admin'),
   userController.getUserStats
 );
 
