@@ -120,6 +120,29 @@ userSchema.methods.createPasswordResetToken = function () {
   return resetToken;
 };
 
+userSchema.statics.getUserStats = async function () {
+  const date = new Date();
+  const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
+  const prevYear = new Date(date.setFullYear(lastYear.getFullYear() - 1));
+
+  return await User.aggregate([
+    {
+      $match: { createdAt: { $gte: prevYear } },
+    },
+    {
+      $project: {
+        month: { $month: '$createdAt' },
+      },
+    },
+    {
+      $group: {
+        _id: '$month',
+        total: { $sum: 1 },
+      },
+    },
+  ]);
+};
+
 const User = mongoose.models.User || mongoose.model('User', userSchema);
 
 export default User;
