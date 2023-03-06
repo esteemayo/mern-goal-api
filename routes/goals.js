@@ -29,4 +29,4 @@ router
   .patch(goalController.updateGoal)
   .delete(goalController.deleteGoal);
 
-module.exports = router;
+export default router;
