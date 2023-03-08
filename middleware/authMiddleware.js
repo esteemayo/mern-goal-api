@@ -1,3 +1,4 @@
+import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
 import asyncHandler from 'express-async-handler';
 
