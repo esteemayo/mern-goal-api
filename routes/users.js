@@ -26,8 +26,6 @@ router
   .get(authMiddleware.restrictTo('admin'), userController.getAllUsers)
   .post(userController.createUser);
 
-router.use(authMiddleware.restrictTo('admin'));
-
 router
   .route('/:id')
   .get(authMiddleware.verifyUser, userController.getUser)
