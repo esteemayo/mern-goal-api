@@ -59,7 +59,7 @@ const restrictTo =
     };
 
 const verifyUser = (req, res, next) => {
-  if (req.user.id === req.params.id) {
+  if (req.user.id === req.params.id || req.user.role === 'admin') {
     return next();
   }
   return next(new ForbiddenError('You do not have permission to perform this operation'));
