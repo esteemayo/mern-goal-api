@@ -30,7 +30,7 @@ router.use(authMiddleware.restrictTo('admin'));
 
 router
   .route('/:id')
-  .get(userController.getUser)
+  .get(authMiddleware.verifyUser, userController.getUser)
   .patch(userController.updateUser)
   .delete(userController.deleteUser);
 
