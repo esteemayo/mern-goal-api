@@ -1,5 +1,4 @@
 import { promisify } from 'util';
-import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
 
 import User from '../models/User.js';
